@@ -44,7 +44,7 @@ The program then accepts input for choice of mode and color.
   
 ## Working of King under Threat Function
 
-  <img src="./png/4)King_Under_Threat_Check.png" />
+  <img src="./png/4)King_Under_Threat _ Check.png" />
 
 ## Working of CheckMate
 
