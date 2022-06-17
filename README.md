@@ -83,7 +83,7 @@ If invalid, the game simply goes to the next iteration of the game loop (and thu
 * The program uses a set of number codes which represent a direction.
 
 * There are static arrays which store the delta-x and delta-y for that direction (which are used for move generation)
-
+---
 ## Computer Player - CHESS ENGINE
 * There is a way to update the state of the board and possible moves of the piece for each move made.
 The Computer player uses the minmax algorithm, with alpha-beta pruning. 
@@ -104,11 +104,13 @@ For example, for a depth-2 minmax, (assume white starts)
 
 * The algorithm works fairly fast upto depth 4, but takes more than 1.5 minutes for depth 6. Odd depths are unreliable, as do not end with opponent's move.
 
+---
 
 ### Problems
 
 * This does NOT implement *En-Passe*, due to complications arising out of using en-passe to kill a checking pawn, due to the final square not being the same as the square of the piece which is killed
 
+---
 
 ### Possible Extension:
 
