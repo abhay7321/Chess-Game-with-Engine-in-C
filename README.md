@@ -24,7 +24,7 @@ gcc engine.h engine.c main.c -lX11
 The program then accepts input for choice of mode and color.
 
 
-## Working of Chess Game 
+## Working of the Project
 
 * Includes single player and two player modes.
 
