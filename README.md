@@ -2,19 +2,17 @@
 
 ## DSA Project
 
-Chess developed in C. 
+* Includes single player and two player modes.
 
-Includes single player and two player modes.
+* Contains all functions for validating moves and generating moves.
 
-Contains all functions for validating moves and generating moves.
+* Contains all functions to store all possible moves of a piece.
 
-Contains all functions to store all possible moves of a piece.
+* Functions to detect Check, Checkmate and Stalemate.
 
-Functions to detect Check, Checkmate and Stalemate.
+* The Chess Engine works on an algorithm that is based on Minimax algorithm and alpha-beta pruning.
 
-The Chess Engine works on an algorithm that is based on Minimax algorithm and alpha-beta pruning.
-
-The algorithm works fairly fast upto depth 4, but takes more than 1.5 minutes for depth 6. Odd depths are unreliable, as do not end with opponent's move.
+* The algorithm works fairly fast upto depth 4, but takes more than 1.5 minutes for depth 6. Odd depths are unreliable, as do not end with opponent's move.
 
 ## Compilation Instructions 
 
