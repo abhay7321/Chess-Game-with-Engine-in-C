@@ -35,7 +35,7 @@ gcc engine.h engine.c main.c -lX11
 
 * The algorithm works fairly fast upto depth 4, but takes more than 1.5 minutes for depth 6. Odd depths are unreliable, as do not end with opponent's move.
 
-###Game Loop for 1 player and 2 player game
+### Game Loop for 1 player and 2 player game
 
   <img src="./png/1)Main.png" width="700" height="700"/>
   
