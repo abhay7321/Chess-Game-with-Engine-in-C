@@ -31,6 +31,8 @@ The program then accepts input for choice of mode and color.
 
 ## The Program
 
+  <img src="./FLOW_CHARTS/1)Main.png" />
+
 ## Game Loop
 Once the game starts, the game waits for user input. The input can be
 
