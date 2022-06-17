@@ -53,26 +53,25 @@ The program then accepts input for choice of mode and color.
 
 ## Game Loop
 Once the game starts, the game waits for user input. The input can be
-
-[a-h][1-8]-[a-h][1-8]: a move which specifies the initial square (from) and the final square (to)
+1 for one player Game and 2 for 2 player Game
 
 board: prints board again
+
+[a-h][1-8]-[a-h][1-8]: a move which specifies the initial square (from) and the final square (to)
 
 The game checks whether the move is valid- if yes, it makes the move and updates the state accordingly
 If invalid, the game simply goes to the next iteration of the game loop (and thus, tries again)
 
-The state of the board and pieces is updated after each move. 
+The state of the board and pieces is updated after each move and board is printed.
 
-At every point, the *number of squares the piece  can move in a direction, along with the piece occupying the LAST square in that direction is stored*
+When a move is made, for every piece, the program checks whether the *from* and *to* squares are in the range of the piece.
 
-When a move is made, for every piece, the program checks whether the *from* and *to* squares are in the range of the piece. It recalculates the moves of the piece in the direction from position of piece to the square. Only if the direction is a valid direction for the piece, dies it recalculate the pieces moves in that direction.
-
-The program uses a set of number codes which represent a direction 
+The program uses a set of number codes which represent a direction.
 
 There are static arrays which store the delta-x and delta-y for that direction (which are used for move generation)
 
 ## Computer Player - CHESS ENGINE
-There is a way to update the state of the board and possible moves of the piece for each move made
+There is a way to update the state of the board and possible moves of the piece for each move made.
 The Computer player uses the minmax algorithm, with alpha-beta pruning. 
 Minmax uses a static evaluation function. The function has 3 main parameters-
 
