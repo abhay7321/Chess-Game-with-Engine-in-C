@@ -29,9 +29,16 @@ gcc engine.h engine.c main.c -lX11
 The program then accepts input for choice of mode and color.
 
 
-## The Program
+## Game Loop for 1 player and 2 player game
 
   <img src="./FLOW_CHARTS/1)Main.png" />
+  
+  
+## Make Move Function for Pieces
+
+  <img src="./FLOW_CHARTS/1)Make_Move.png" />
+  
+  
 
 ## Game Loop
 Once the game starts, the game waits for user input. The input can be
