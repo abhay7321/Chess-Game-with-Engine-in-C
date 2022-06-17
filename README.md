@@ -12,6 +12,22 @@ The algorithm is based on Minimax and alpha-beta pruning.
 
 The algorithm works fairly fast upto depth 4, but takes more than 1.5 minutes for depth 6. Odd depths are unreliable, as do not end with opponent's move.
 
+## Compilation Instructions 
+
+For dependencies: 
+```
+sudo apt-get update 
+sudo apt-get install lesstif2-dev OR sudo apt-get install libmotif-dev
+```
+
+For compiling:
+```
+gcc engine.h engine.c main.c -lX11
+./a.out
+````
+
+The program then accepts input for choice of mode and color.
+
 
 ## The Program
 
