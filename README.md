@@ -31,7 +31,7 @@ The program then accepts input for choice of mode and color.
 
 ## Working of Game Loop for 1 player and 2 player game
 
-  <img src="./png/1)Main.png" />
+  <img src="./png/1)Main.png" width="400" height="400"/>
   
   
 ## Working of Make Move Function for Pieces
