@@ -52,55 +52,56 @@ The program then accepts input for choice of mode and color.
   
 
 ## Game Loop
-Once the game starts, the game waits for user input. The input can be
+* Once the game starts, the game waits for user input. The input can be
 1 for one player Game and 2 for 2 player Game
 
-board: prints board again
+* board: prints board again
 
-[a-h][1-8]-[a-h][1-8]: a move which specifies the initial square (from) and the final square (to)
+* [a-h][1-8]-[a-h][1-8]: a move which specifies the initial square (from) and the final square (to)
 
-The game checks whether the move is valid- if yes, it makes the move and updates the state accordingly
+* The game checks whether the move is valid- if yes, it makes the move and updates the state accordingly
 If invalid, the game simply goes to the next iteration of the game loop (and thus, tries again)
 
-The state of the board and pieces is updated after each move and board is printed.
+* The state of the board and pieces is updated after each move and board is printed.
 
-When a move is made, for every piece, the program checks whether the *from* and *to* squares are in the range of the piece.
+* When a move is made, for every piece, the program checks whether the *from* and *to* squares are in the range of the piece.
 
-The program uses a set of number codes which represent a direction.
+* The program uses a set of number codes which represent a direction.
 
-There are static arrays which store the delta-x and delta-y for that direction (which are used for move generation)
+* There are static arrays which store the delta-x and delta-y for that direction (which are used for move generation)
 
 ## Computer Player - CHESS ENGINE
-There is a way to update the state of the board and possible moves of the piece for each move made.
+* There is a way to update the state of the board and possible moves of the piece for each move made.
 The Computer player uses the minmax algorithm, with alpha-beta pruning. 
 Minmax uses a static evaluation function. The function has 3 main parameters-
 
-Values of pieces
+* Values of pieces
 
-Number of squares controlled
+* Number of squares controlled
 
-King safety
+* King safety
 
-The function uses these parameters to generate a number which represents the *goodness* of the position for white and black. A positive score is good for white, and negative for black. Minmax tries to *minimise* the score for black, and *maximise* the score for white. 
+* The function uses these parameters to generate a number which represents the *goodness* of the position for white and black. A positive score is good for white, and negative for black. Minmax tries to *minimise* the score for black, and *maximise* the score for white. 
 For example, for a depth-2 minmax, (assume white starts)
 
-White tries ALL moves, and then for each move, calculates all possible moves for black. Now the score for the best move for black, is the score of that *branch*. Now, this is done recursively, with white doing MAX(minimise) ad black doing MIN(maximise)
-Alpha beta pruning eliminates those moves in search using information about best move for black or white till that point.
+* White tries ALL moves, and then for each move, calculates all possible moves for black. Now the score for the best move for black, is the score of that *branch*. Now, this is done recursively, with white doing MAX(minimise) ad black doing MIN(maximise)
 
-The algorithm works fairly fast upto depth 4, but takes more than 1.5 minutes for depth 6. Odd depths are unreliable, as do not end with opponent's move.
+* Alpha beta pruning eliminates those moves in search using information about best move for black or white till that point.
+
+* The algorithm works fairly fast upto depth 4, but takes more than 1.5 minutes for depth 6. Odd depths are unreliable, as do not end with opponent's move.
 
 
 ### Problems
 
-This does NOT implement *En-Passe*, due to complications arising out of using en-passe to kill a checking pawn, due to the final square not being the same as the square of the piece which is killed
+* This does NOT implement *En-Passe*, due to complications arising out of using en-passe to kill a checking pawn, due to the final square not being the same as the square of the piece which is killed
 
 
 ### Possible Extension:
 
-Build a better static evaluation function by anylisis of board position<-> win data
+* Build a better static evaluation function by anylisis of board position<-> win data
 
-Interface with Xboard
+* Interface with Xboard
 
-Some kind of lookup table for fast checking of draw by repetition of *position*
+* Some kind of lookup table for fast checking of draw by repetition of *position*
 
-Variable tree depth- when situation is dynamic(king in check or exchange going on) , look ahead more (modify the code in if (depth == 0))
+* Variable tree depth- when situation is dynamic(king in check or exchange going on) , look ahead more (modify the code in if (depth == 0))
