@@ -2,7 +2,12 @@
 
 ### DESCRIPTION :-  
 This is Chess Game project that is completely implemented in C Programmng Language .
-This project can be used for a 2 Player Chess Game , it also has a Chess Engine where a single player can have a match with the Chess Engine.
+
+It has 2 modes
+
+One player mode, where the player competes with Chess Engine that is implemented using Minimax algorithm and Alpha beta pruning
+
+Two player mode, where 2 players can compete with each other.
 
 * Includes single player and two player modes.
 
