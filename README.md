@@ -2,8 +2,11 @@
 
 ## DSA Project
 
-Chess developed in C. Includes single player and two player modes Representation of board is done using integer two dimensional array. 
-Contains all functions for validating moves and detecting checks/checkmate. The algorithm is based on Minimax and alpha-beta pruning. The algorithm works fairly fast upto depth 4, but takes more than 1.5 minutes for depth 6. Odd depths are unreliable, as do not end with opponent's move.
+Chess developed in C. 
+Includes single player and two player modes Representation of board is done using integer two dimensional array. 
+Contains all functions for validating moves and detecting checks/checkmate. 
+The algorithm is based on Minimax and alpha-beta pruning. 
+The algorithm works fairly fast upto depth 4, but takes more than 1.5 minutes for depth 6. Odd depths are unreliable, as do not end with opponent's move.
 
 
 ## The Program
