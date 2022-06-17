@@ -41,25 +41,25 @@ gcc engine.h engine.c main.c -lX11
   
   ---
   
-###Make Move Function for Pieces
+### Make Move Function for Pieces
 
   <img src="./png/2)Make_Move.png" width="700" height="700"/>
    
   ---
    
-###Working of Check_Move Function and is_Move_Feasible Function
+### Working of Check_Move Function and is_Move_Feasible Function
 
   <img src="./png/3)Check_Move_is_Move_Feasible.png" width="700" height="700"/>
   
   ---
   
-###Working of King under Threat Function
+### Working of King under Threat Function
 
   <img src="./png/4)King_Under_Threat _ Check.png" width="700" height="700"/>
 
   ---
 
-###Working of CheckMate
+### Working of CheckMate
 
   <img src="./png/5)CheckMate.png" width="700" height="700"/>  
   
