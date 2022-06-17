@@ -36,19 +36,19 @@ The program then accepts input for choice of mode and color.
   
 ## Working of Make Move Function for Pieces
 
-  <img src="./png/2)Make_Move.png" />
+  <img src="./png/2)Make_Move.png" width="700" height="700"/>
   
 ## Working of Check_Move Function and is_Move_Feasible Function
 
-  <img src="./png/3)Check_Move_is_Move_Feasible.png" />
+  <img src="./png/3)Check_Move_is_Move_Feasible.png" width="700" height="700"/>
   
 ## Working of King under Threat Function
 
-  <img src="./png/4)King_Under_Threat _ Check.png" />
+  <img src="./png/4)King_Under_Threat _ Check.png" width="700" height="700"/>
 
 ## Working of CheckMate
 
-  <img src="./png/5)CheckMate.png" />  
+  <img src="./png/5)CheckMate.png" width="700" height="700"/>  
   
 
 ## Game Loop
