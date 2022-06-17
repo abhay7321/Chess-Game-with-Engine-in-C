@@ -1,7 +1,5 @@
 # Chess Engine in C
 
-## DSA Project
-
 * Includes single player and two player modes.
 
 * Contains all functions for validating moves and generating moves.
