@@ -1,5 +1,9 @@
 # Chess Engine in C
 
+### DESCRIPTION :-  
+This is Chess Game project that is completely implemented in C Programmng Language .
+This project can be used for a 2 Player Chess Game , it also has a Chess Engine where a single player can have a match with the Chess Engine.
+
 * Includes single player and two player modes.
 
 * Contains all functions for validating moves and generating moves.
