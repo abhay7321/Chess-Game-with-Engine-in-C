@@ -21,9 +21,6 @@ gcc engine.h engine.c main.c -lX11
 ./a.out
 ````
 
-The program then accepts input for choice of mode and color.
-
-
 ## Working of the Project
 
 * Includes single player and two player modes.
