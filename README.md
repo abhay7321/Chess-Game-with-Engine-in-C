@@ -1,9 +1,9 @@
 # Chess Engine in C
 
 ### DESCRIPTION :-  
-* This is Chess Game project that is completely implemented in C Programmng Language .
+This is Chess Game project that is completely implemented in C Programmng Language .
 
-It has 2 modes
+The Game has 2 modes
   * One player mode, where the player competes with Chess Engine that is implemented using Minimax algorithm and Alpha beta pruning
   * Two player mode, where 2 players can compete with each other.
 ---
