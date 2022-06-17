@@ -42,7 +42,7 @@ The program then accepts input for choice of mode and color.
 
   <img src="./png/3)Check_Move_is_Move_Feasible.png" />
   
-## Working of King ubder Threat Function
+## Working of King under Threat Function
 
   <img src="./png/4)King_Under_Threat_Check.png" />
 
