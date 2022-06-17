@@ -31,12 +31,12 @@ The program then accepts input for choice of mode and color.
 
 ## Game Loop for 1 player and 2 player game
 
-  <img src="./FLOW_CHARTS/1)Main.png" />
+  <img src="./png/1)Main.png" />
   
   
 ## Make Move Function for Pieces
 
-  <img src="./FLOW_CHARTS/2)Make_Move.png" />
+  <img src="./png/2)Make_Move.png" />
   
   
 
