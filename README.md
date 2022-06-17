@@ -36,7 +36,7 @@ The program then accepts input for choice of mode and color.
   
 ## Make Move Function for Pieces
 
-  <img src="./FLOW_CHARTS/1)Make_Move.png" />
+  <img src="./FLOW_CHARTS/2)Make_Move.png" />
   
   
 
