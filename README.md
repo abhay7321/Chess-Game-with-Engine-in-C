@@ -1,4 +1,4 @@
-# Chess
+# Chess Engine in C
 
 ## DSA Project
 
