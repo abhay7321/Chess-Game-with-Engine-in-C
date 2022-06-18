@@ -1,19 +1,35 @@
-# Chess Engine in C
+<div align="center">
+	<h1>AlphaMax</h1>
+   <h4>Chess Game with Chess Engine in C</h4> 
+</div>
+<div align="center">
+   <img align="center" width=40% src="assests/chess.png" >
+</div>
 
-### DESCRIPTION :-  
+
+## Contents
+
+- [About](#about)
+- [Building](#building)
+- [Implementation Details](#implementation-details)
+- [Computer Player](#computer-player)
+- [Problems](#problems)
+- [Possible Extension](#possible-extension)
+
+## About
 This is Chess Game project that is completely implemented in C Programmng Language .
 
 The Game has 2 modes
   * One player mode, where the player competes with Chess Engine that is implemented using Minimax algorithm and Alpha beta pruning
   * Two player mode, where 2 players can compete with each other.
----
-## Compilation Instructions 
 
-For dependencies: 
-```
-sudo apt-get update 
-sudo apt-get install lesstif2-dev OR sudo apt-get install libmotif-dev
-```
+## Building 
+
+[comment]: <> (For dependencies: )
+[comment]: <> (```)
+[comment]: <> (sudo apt-get update) 
+[comment]: <> (sudo apt-get install lesstif2-dev OR sudo apt-get install libmotif-dev)
+[comment]: <> (```)
 
 For compiling:
 ```
@@ -21,78 +37,70 @@ gcc engine.h engine.c main.c -lX11
 ./a.out
 ````
 
-## Working of the Project
+## Implementation Details
 
-* Includes single player and two player modes.
+### Game Loop [Refer](assests/Main.png)
+* Input is taken from the White player for his move.
+* If  move is valid it makes the move and asks the Black Player to make his move, else it tells the White player about Invalid move and asks for an valid input.
+* Same things happen when Black is making his move.
+* Game continues till either one of the player wins or there is a draw.
 
-* Contains all functions for validating moves and generating moves.
-
-* Contains all functions to store all possible moves of a piece.
-
-* Functions to detect Check, Checkmate and Stalemate.
-
-* The Chess Engine works on an algorithm that is based on Minimax algorithm and alpha-beta pruning.
-
-* The algorithm works fairly fast upto depth 4, but takes more than 1.5 minutes for depth 6. Odd depths are unreliable, as do not end with opponent's move.
-
-### Game Loop for 1 player and 2 player game
-
-  <img src="./png/1)Main.png" width="700" height="700"/>
-  
-  ---
-  
-### Make Move Function for Pieces
-
-  <img src="./png/2)Make_Move.png" width="700" height="700"/>
-   
-  ---
-   
-### Working of Check_Move Function and is_Move_Feasible Function
-
-  <img src="./png/3)Check_Move_is_Move_Feasible.png" width="700" height="700"/>
-  
-  ---
-  
-### Working of King under Threat Function
-
-  <img src="./png/4)King_Under_Threat _ Check.png" width="700" height="700"/>
-
-  ---
-
-### Working of CheckMate
-
-  <img src="./png/5)CheckMate.png" width="700" height="700"/>  
-  
-  ---
-
-## Game Loop
-* Once the game starts, the game waits for user input. The input can be
-1 for one player Game and 2 for 2 player Game
-
-* board: prints board again
-
-* [a-h][1-8]-[a-h][1-8]: a move which specifies the initial square (from) and the final square (to)
-
-* The game checks whether the move is valid- if yes, it makes the move and updates the state accordingly
-If invalid, the game simply goes to the next iteration of the game loop (and thus, tries again)
-
-* The state of the board and pieces is updated after each move and board is printed.
-
-* When a move is made, for every piece, the program checks whether the *from* and *to* squares are in the range of the piece.
-
-* The program uses a set of number codes which represent a direction.
-
-* There are static arrays which store the delta-x and delta-y for that direction (which are used for move generation)
 ---
-## Computer Player - CHESS ENGINE
+
+### Check Move Algorithm [Refer](assests/Check_Move_is_Move_Feasible.png)
+* 1)Examine weather source and destination squares are inside grid, if no INVALID MOVE.
+* 2)Then evaluate if source square has current players piece, if no INVALID MOVE.
+* 3)Then evaluate if destination square is empty or has opponent players piece, if no INVALID MOVE.
+* 4)Now examine if the piece in Source Square can move to Destination Square, if not then its INVALID MOVE.
+* 5)If all the above statements are valid then it may be a VALID move, further examination is done by Make Move.
+
+---
+
+### Move Validation Functions [Refer](assests/Check_Move_is_Move_Feasible.png)
+
+| Function  | Description |
+| ------------- | ------------- |
+| `Validate_Pawn_Move()`  | Examines if it's a valid Pawn Move from given souce to given destination.  |
+| `Validate_Rook_Move()`  | Examines if it's a valid Rook Move from given souce to given destination.  |
+| `Validate_Knight_Move()` | Examines if it's a valid Knight Move from given souce to given destination.  |
+| `Validate_Bishop_Move()`  | Examines if it's a valid Bishop Move from given souce to given destination.  |
+| `Validate_Queen_Move()`  | Examines if it's a valid Queen Move from given souce to given destination.  |
+| `Validate_King_Move()`  | Examines if it's a valid King Move from given souce to given destination.  |
+
+---
+	
+### King Safety Functions [Refer](assests/King_Under_Threat_Check.png)
+| Function          		| Description                                						|
+| -----------------------------| --------------------------------------------------------------------------------------|
+| `Is_King_Safe()`  		| Examines if Current player's King is safe after Currrent Player's move.      		|
+| `Is_King_under_threat()`   	| Examines if Opponent player's King is under threat after Currrent Player's move.	|
+
+---
+
+### Game Over Functions [Refer](assests/CheckMate.png)
+| Function          		| Description                                						|
+| -----------------------------| --------------------------------------------------------------------------------------|
+| `Checkmate()`   		| Examine if Opponent is Checkmate, if opponent's King is under threat.         	|
+| `Stalemate()`   		| Examine if Opponent has at least one Valid Move after Current Player made his move.	|
+
+---
+
+### Make Move Algorithm [Refer](assests/Make_Move.png)
+* 1)First we validate the Check Move functions value, if true proceed else INVALID move.
+* 2)If Check Move returns true, then we validate if our King is safe after the move, if UNSAFE then INVALID move.
+* 3)Then we examine if the opponent's King is under threat, inform the opponent about CHECK.
+* 4)If opponent's King was under threat, we examine if opponent's King is Checkmate, GAME OVER.
+* 5)ELSE If opponent's King is safe, we examine if opponent is Stalemate, IT IS A DRAW.
+* 6)ELSE ask the opponent to make the move.
+
+
+## Computer Player
 * There is a way to update the state of the board and possible moves of the piece for each move made.
 The Computer player uses the minmax algorithm, with alpha-beta pruning. 
 Minmax uses a static evaluation function. The function has 3 main parameters-
 
 * Values of pieces
-
 * Number of squares controlled
-
 * King safety
 
 * The function uses these parameters to generate a number which represents the *goodness* of the position for white and black. A positive score is good for white, and negative for black. Minmax tries to *minimise* the score for black, and *maximise* the score for white. 
@@ -104,15 +112,13 @@ For example, for a depth-2 minmax, (assume white starts)
 
 * The algorithm works fairly fast upto depth 4, but takes more than 1.5 minutes for depth 6. Odd depths are unreliable, as do not end with opponent's move.
 
----
 
-### Problems
+## Problems
 
 * This does NOT implement *En-Passe*, due to complications arising out of using en-passe to kill a checking pawn, due to the final square not being the same as the square of the piece which is killed
 
----
 
-### Possible Extension:
+## Possible Extension:
 
 * Build a better static evaluation function by anylisis of board position<-> win data
 
